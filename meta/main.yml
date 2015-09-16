@@ -1,0 +1,14 @@
+galaxy_info:
+  author: Mikhail Shirkov
+  company: Clique
+  description: Provision nodejs app
+  license: MIT
+  min_ansible_version: 1.9
+  platforms:
+    - name: Ubuntu
+      versions:
+        - all
+  categories:
+    - cloud
+dependencies: []
+version: 0.0.1
