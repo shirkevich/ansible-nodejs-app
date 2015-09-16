@@ -19,6 +19,8 @@
   apt: name={{ item }} state=present
   with_items: extra_packages
 
+- name: wait for mongo server to start
+  wait_for: port=27017 delay=2
 
 - lineinfile: dest=/etc/nginx/nginx.conf regexp="passenger_root" line="passenger_root /usr/lib/ruby/vendor_ruby/phusion_passenger/locations.ini;"
 
@@ -30,5 +32,3 @@
   tags: deploy
   notify:
     - reload nginx
-
-- service: name=nginx state=restarted
